@@ -1,0 +1,137 @@
+$primary: #edf2f6;
+$secondary: #1a202c;
+
+body {
+  background-color: $secondary;
+  padding-block: 1.5rem;
+  font-family: "montana-rg", Tahoma, sans-serif;
+  padding-inline: 4vw;
+  @media (min-width: 1024px) {
+    padding-inline: 6vw;
+  }
+}
+.title {
+  width: 90%;
+  @media (min-width: 500px) {
+    width: 75%;
+  }
+  @media (min-width: 800px) {
+    width: 60%;
+  }
+  @media (min-width: 1000px) {
+    width: 50%;
+  }
+  h1 {
+    color: $primary;
+  }
+}
+ul {
+  position: relative;
+  display: flex;
+  margin-top: 10rem;
+  margin-bottom: 6rem;
+  justify-content: center;
+  list-style: none;
+  @media (max-width: 700px) {
+    display: block;
+    margin-top: 6rem;
+  }
+  li {
+    position: relative;
+    z-index: 0;
+    width: 350px;
+    text-align: center;
+    @media (max-width: 700px) {
+      text-align: left;
+      padding-left: 30px;
+    }
+    &:before {
+      content: "";
+      width: 26px;
+      height: 26px;
+      border: 5px solid;
+      border-color: $primary;
+      background-color: $secondary;
+      border-radius: 50%;
+      display: block;
+      margin-left: 39.5%;
+      @media (max-width: 700px) {
+        margin-left: -36px;
+        margin-bottom: 1rem;
+      }
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      background-color: $primary;
+      height: 4px;
+      top: 11px;
+      left: 0;
+      z-index: -1;
+      @media (max-width: 700px) {
+        width: 4px;
+        height: 100%;
+        left: 10px;
+      }
+    }
+    h2 {
+      font-weight: 700;
+      font-size: 1.12rem;
+      color: $primary;
+      position: absolute;
+      top: -5rem;
+      left: 35%;
+      line-height: 23px;
+      @media (max-width: 700px) {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 1rem;
+      }
+      & + p {
+        position: relative;
+        margin-top: 4rem;
+        @media (max-width: 700px) {
+          margin-top: 0;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          border-right: 2px dashed;
+          border-color: $primary;
+          left: 49%;
+          height: 3rem;
+          bottom: 120%;
+          @media (min-width: 1400px) {
+            left: 47%;
+          }
+          @media (min-width: 1600px) {
+            left: 45%;
+          }
+          @media (max-width: 700px) {
+            height: 0;
+            border: none;
+            position: relative;
+          }
+        }
+      }
+    }
+    &:nth-of-type(even) {
+      h2 + p {
+        margin-top: 8rem;
+        @media (max-width: 700px) {
+          margin-top: 0;
+        }
+        &:after {
+          height: 7rem;
+        }
+      }
+    }
+    p {
+      font-weight: 500;
+      font-size: 0.87rem;
+      color: $primary;
+    }
+  }
+}
